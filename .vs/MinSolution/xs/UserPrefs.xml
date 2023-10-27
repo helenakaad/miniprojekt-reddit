@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{A5A15FDE-494B-401F-AE11-CC767AD5C518}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MiniApi/Program.cs">
+    <Files>
+      <File FileName="MiniBlazor/Pages/SinglePost.razor" />
+      <File FileName="MiniBlazor/Pages/Index.razor" />
+      <File FileName="MiniBlazor/Services/ApiService.cs" />
+      <File FileName="MiniApi/Program.cs" Line="45" Column="1" />
+      <File FileName="MiniApi/Service/DataService.cs" />
+      <File FileName="MiniBlazor/Pages/CreatePost.razor" />
+      <File FileName="shared/Model/Comments.cs" />
+      <File FileName="MiniBlazor/Shareds/MainLayout.razor" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MinSolution">
+            <Node name="MiniBlazor" expanded="True">
+              <Node name="Pages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MiniBlazor PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

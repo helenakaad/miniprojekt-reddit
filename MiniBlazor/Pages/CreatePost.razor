@@ -1,0 +1,68 @@
+﻿@page "/posts/newPost"
+
+@inherits LayoutComponentBase
+
+@using Services;
+@using Shared.Model;
+
+@inject ApiService apiService
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@inject NavigationManager NavigationManager
+
+<PageTitle>Threads</PageTitle>
+
+<style>
+    .links {
+        text-decoration: none;
+        color: darkslategray;
+    }
+
+        .links.s {
+            text-decoration: none;
+            color: darkgrey;
+        }
+
+        .links:hover {
+            color: lightgrey;
+        }
+</style>
+
+<div>
+
+    <p><a class="links" href="/">Back</a></p>
+
+    <br />
+    <h3>Have something to say?</h3>
+    <br />
+    <input placeholder="Header" type="input" id="header" @bind-value="Header" />
+    <br />
+    <input placeholder="Text" type="input" id="text" @bind-value="Text" />
+    <br />
+    <input placeholder="Name" type="input" id="name" @bind-value="Name" />
+    <br />
+    <button type="button" @onclick="CreateNewPost">Create new post!</button>
+</div>
+
+@code {
+
+    [Parameter]
+    public Posts post { get; set; }
+    public string? Text;
+    public string? Header;
+    public string? Name;
+    private List<Posts> posts = new();
+
+    private async void CreateNewPost()
+    {
+        if (Text == null)
+        {
+            return;
+        }
+
+        await apiService.CreatePost(Header, Text, Name);
+        StateHasChanged();
+        NavigationManager.NavigateTo("/");
+    }
+}

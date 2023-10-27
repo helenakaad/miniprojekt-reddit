@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBlazor", "MiniBlazor\MiniBlazor.csproj", "{A5A15FDE-494B-401F-AE11-CC767AD5C518}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniApi", "MiniApi\MiniApi.csproj", "{4943E437-0E41-4E86-9577-8682EDDCF13A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shared", "shared\shared.csproj", "{05B5E221-F0D1-4197-9538-8861F68C194A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5A15FDE-494B-401F-AE11-CC767AD5C518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A15FDE-494B-401F-AE11-CC767AD5C518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A15FDE-494B-401F-AE11-CC767AD5C518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A15FDE-494B-401F-AE11-CC767AD5C518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4943E437-0E41-4E86-9577-8682EDDCF13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4943E437-0E41-4E86-9577-8682EDDCF13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4943E437-0E41-4E86-9577-8682EDDCF13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4943E437-0E41-4E86-9577-8682EDDCF13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B5E221-F0D1-4197-9538-8861F68C194A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B5E221-F0D1-4197-9538-8861F68C194A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B5E221-F0D1-4197-9538-8861F68C194A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B5E221-F0D1-4197-9538-8861F68C194A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

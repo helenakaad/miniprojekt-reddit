@@ -1,0 +1,174 @@
+﻿@page "/posts/{id}"
+@page "/posts/{id}/newComment"
+
+@using Services;
+@using Shared.Model;
+
+@inject ApiService apiService
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<PageTitle>Post</PageTitle>
+
+<style>
+    .arrow {
+        background-color: transparent; /* Baggrundsfarve */
+        color: lightgrey; /* Tekstfarve */
+        border: none; /* Ingen kant */
+        font-size: 30px; /* Juster størrelsen efter dine præferencer */
+        cursor: pointer; /* Gør det til en markør, når du hovrer over knappen */
+        position: relative;
+        overflow: hidden;
+    }
+
+        .arrow.up:hover {
+            color: lightgreen;
+        }
+
+        .arrow.down:hover {
+            color: lightpink;
+        }
+
+    .links {
+        text-decoration: none;
+        color: darkslategray;
+    }
+
+        .links.s {
+            text-decoration: none;
+            color: darkgrey;
+        }
+
+        .links:hover {
+            color: lightgrey;
+        }
+
+    .header {
+        color: black; /* Tekstfarve */
+        border: none; /* Ingen kant */
+        font-size: 80px; /* Juster størrelsen efter dine præferencer */
+        bottom-margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+
+@if (post == null)
+    {
+    <p><em>Loading...</em></p>
+    }
+
+    else
+    {
+<p><a class="links" href="/">Back</a></p>
+
+<div class="header">
+    <p style="font-size: 50px">@post.Header</p>
+</div>
+
+<div class="container">
+    <p style="color:slategray; font-size: small">@post.Name</p>
+    <p style="color:grey; font-size:25px">@post.Text</p>
+    <div id="container">
+        <button class="arrow up" @onclick="() => { UpvotePost(post.PostsId); }"> ⬆ </button>
+        <p style="display:inline-block;"> @(post.Upvotes - post.DownVotes) </p>
+        <button class="arrow down" @onclick="() => { DownvotePost(post.PostsId); }"> ⬇ </button>
+    </div>
+    <p style="font-size:15px; color:lightgrey;">@post.DateTime</p>
+    <hr />
+    <br />
+</div>
+<div class="container">
+    <h2>Comments</h2>
+    <br />
+    @foreach (var comment in post.Comments)
+    {
+        <p style="color:slategray; font-size: small">@comment.Name</p>
+        <p style="color:grey;">@comment.Text</p>
+
+        <div id="container">
+            <button class="arrow up" @onclick="() => { UpvoteComment(comment.CommentsId); }"> ⬆ </button>
+            <p style="display:inline-block;"> @(comment.Upvotes - comment.DownVotes) </p>
+            <button class="arrow up" @onclick="() => { DownvoteComment(comment.CommentsId); }"> ⬇ </button>
+        </div>
+        <p style="font-size:15px; color:lightgrey;">@comment.DateTime</p>
+        <hr />
+        <br />
+    }
+</div>
+<div class="container">
+    <h2>Write a comment</h2>
+    <input placeholder="Text" type="input" id="text" @bind-value="Text" />
+    <input placeholder="Name" type="input" id="name" @bind-value="Name" />
+    <p></p>
+    <button id="createCommentButton" type="button" @onclick="CreateNewComment">Post comment</button>
+</div>
+<br />
+
+
+}
+
+@code {
+
+    [Parameter]
+    public string Id { get; set; }
+    public int id { get { return int.Parse(Id); } }
+
+    public Posts post { get; set; }
+    public Comments comments = new();
+
+    public string? Text;
+    public string? Name;
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = await apiService.GetSinglePost(id);
+    }
+
+    private async void CreateNewComment()
+    {
+
+        if (Text == null)
+        {
+            return;
+        }
+
+        await apiService.CreateComment(Text, Name, post.PostsId);
+        await OnInitializedAsync();
+        Text = string.Empty;
+        Name = string.Empty;
+        StateHasChanged();
+    }
+
+    private async Task UpvotePost(int id)
+    {
+        post = await apiService.UpvotePosts(id);
+        await OnInitializedAsync();
+        StateHasChanged();
+    }
+
+    private async Task DownvotePost(int id)
+    {
+        post = await apiService.DownvotePosts(id);
+        await OnInitializedAsync();
+        StateHasChanged();
+    }
+
+    private async Task UpvoteComment(int id)
+    {
+        comments = await apiService.UpvoteComments(id);
+        await OnInitializedAsync();
+        StateHasChanged();
+    }
+
+    private async Task DownvoteComment(int id)
+    {
+        comments = await apiService.DownvoteComments(id);
+        await OnInitializedAsync();
+        StateHasChanged();
+
+    }
+}
