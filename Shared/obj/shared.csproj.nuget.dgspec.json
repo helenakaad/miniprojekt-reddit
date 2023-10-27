@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/shared.csproj": {}
+    "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/Shared.csproj": {}
   },
   "projects": {
-    "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/shared.csproj": {
+    "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/shared.csproj",
-        "projectName": "shared",
-        "projectPath": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/shared.csproj",
+        "projectUniqueName": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/Shared.csproj",
         "packagesPath": "/Users/helenakaad/.nuget/packages/",
-        "outputPath": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/obj/",
+        "outputPath": "/Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/helenakaad/.nuget/NuGet/NuGet.Config"

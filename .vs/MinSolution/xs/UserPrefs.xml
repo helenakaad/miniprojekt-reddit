@@ -14,6 +14,9 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MinSolution">
+            <Node name="MiniApi" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
             <Node name="MiniBlazor" expanded="True">
               <Node name="Pages" expanded="True" />
             </Node>

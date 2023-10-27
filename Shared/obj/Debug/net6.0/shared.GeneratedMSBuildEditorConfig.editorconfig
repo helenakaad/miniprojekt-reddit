@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = shared
-build_property.ProjectDir = /Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/shared/
+build_property.RootNamespace = Shared
+build_property.ProjectDir = /Users/helenakaad/Desktop/ita/3. semester/Softwarearkitektur/solution/Shared/
